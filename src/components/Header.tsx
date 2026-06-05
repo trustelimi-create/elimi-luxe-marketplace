@@ -3,6 +3,7 @@ import { useI18n, type Lang } from "@/lib/i18n";
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { Menu, X, Globe, LogOut, LayoutDashboard } from "lucide-react";
+import { InstallPWAButton } from "@/components/InstallPWAButton";
 
 export function Header() {
   const { t, lang, setLang } = useI18n();
@@ -69,6 +70,7 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-2">
+            <InstallPWAButton className="hidden md:inline-flex" />
             <LangSwitcher lang={lang} setLang={setLang} />
             {userId ? (
               <>
