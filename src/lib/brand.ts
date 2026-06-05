@@ -2,13 +2,13 @@
 export const BRAND = {
   name: "Elimi Trust Ltd",
   email: "elimitrustltd1996@gmail.com",
-  phones: ["0740799299", "0786520082"] as const,
-  whatsapp: ["250740799299", "250786520082"] as const, // international format
-  instagram: "elimitrusteltd",
-  tiktok: "elimi trust",
+  phones: ["0785407992", "0786520082"] as const,
+  whatsapp: ["250785407992", "250786520082"] as const, // international format
+  instagram: "elimitrustltd",
+  tiktok: "elimi_trust_ltd",
   facebook: "elimi trust",
-  instagramUrl: "https://instagram.com/elimitrusteltd",
-  tiktokUrl: "https://www.tiktok.com/@elimitrust",
+  instagramUrl: "https://www.instagram.com/elimitrustltd",
+  tiktokUrl: "https://tiktok.com/@elimi_trust_ltd",
   facebookUrl: "https://facebook.com/elimitrust",
 };
 

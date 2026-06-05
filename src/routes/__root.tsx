@@ -45,7 +45,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   head: () => ({
     meta: [
       { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
+      { name: "theme-color", content: "#0a0a0a" },
+      { name: "apple-mobile-web-app-capable", content: "yes" },
+      { name: "apple-mobile-web-app-status-bar-style", content: "black-translucent" },
+      { name: "apple-mobile-web-app-title", content: "Elimi Trust" },
+      { name: "mobile-web-app-capable", content: "yes" },
       { title: "Elimi Trust Ltd — Premium Marketplace Rwanda" },
       { name: "description", content: "Multi-category classified marketplace in Rwanda. Real estate, vehicles, electronics, services and more." },
       { name: "author", content: "Elimi Trust Ltd" },
@@ -58,7 +63,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4992267c-4de0-4158-aae1-2c8c5dd98dd0/id-preview-1a9967c1--c9ade646-f32b-4e4e-9be8-35461fe46bf5.lovable.app-1780596190383.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4992267c-4de0-4158-aae1-2c8c5dd98dd0/id-preview-1a9967c1--c9ade646-f32b-4e4e-9be8-35461fe46bf5.lovable.app-1780596190383.png" },
     ],
-    links: [{ rel: "stylesheet", href: appCss }],
+    links: [
+      { rel: "stylesheet", href: appCss },
+      { rel: "manifest", href: "/manifest.webmanifest" },
+      { rel: "icon", type: "image/png", sizes: "192x192", href: "/icon-192.png" },
+      { rel: "icon", type: "image/png", sizes: "512x512", href: "/icon-512.png" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
