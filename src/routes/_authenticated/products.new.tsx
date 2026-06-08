@@ -80,11 +80,20 @@ function NewProduct() {
             <input className={fld} required maxLength={200} value={title} onChange={(e) => setTitle(e.target.value)} />
           </div>
           <div>
-            <label className={lbl}>Category</label>
-            <select className={fld} required value={categoryId} onChange={(e) => setCategoryId(e.target.value)}>
-              <option value="">Select…</option>
-              {(cats.data?.categories ?? []).map((c: any) => <option key={c.id} value={c.id}>{c.name}</option>)}
+            <label className={lbl}>Category {cats.isLoading && <span className="text-muted-foreground">(loading…)</span>}</label>
+            <select
+              className={fld + " appearance-none bg-[var(--input)] text-foreground pr-10"}
+              style={{ colorScheme: "dark", backgroundImage: "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'><path d='M1 1l5 5 5-5' stroke='%23c8a96a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>\")", backgroundRepeat: "no-repeat", backgroundPosition: "right 14px center" }}
+              required
+              value={categoryId}
+              onChange={(e) => setCategoryId(e.target.value)}
+            >
+              <option value="" style={{ background: "#1a1a1a", color: "#fff" }}>Select a category…</option>
+              {(cats.data?.categories ?? []).map((c: any) => (
+                <option key={c.id} value={c.id} style={{ background: "#1a1a1a", color: "#fff" }}>{c.name}</option>
+              ))}
             </select>
+            {cats.error && <p className="text-xs text-destructive mt-1">Failed to load categories. Refresh the page.</p>}
           </div>
           <div>
             <label className={lbl}>Price</label>
