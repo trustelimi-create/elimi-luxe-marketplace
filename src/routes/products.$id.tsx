@@ -82,6 +82,14 @@ function ProductDetail() {
           </div>
 
           <div className="flex flex-wrap gap-3 mb-8">
+            <BuyViaWhatsApp
+              title={p.title}
+              description={p.description}
+              price={p.price}
+              currency={p.currency}
+              productId={p.id}
+              lang={lang}
+            />
             <WhatsAppButton productId={p.id} productTitle={p.title} />
             <button onClick={toggleLike}
               className={`inline-flex items-center gap-2 px-5 py-3 rounded-lg gold-border hover:bg-accent transition ${liked ? "text-[var(--gold)]" : ""}`}>
