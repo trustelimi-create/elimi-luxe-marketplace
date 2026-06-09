@@ -4,6 +4,7 @@ import { useServerFn } from "@tanstack/react-start";
 import { getProduct } from "@/lib/products.functions";
 import { cldOptimize } from "@/lib/cloudinary";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { BuyViaWhatsApp } from "@/components/BuyViaWhatsApp";
 import { useI18n } from "@/lib/i18n";
 import { useState } from "react";
 import { Heart, MapPin } from "lucide-react";
