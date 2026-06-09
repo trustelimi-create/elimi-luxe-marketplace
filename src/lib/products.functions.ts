@@ -17,7 +17,7 @@ export const listProducts = createServerFn({ method: "POST" })
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
     let q = supabaseAdmin
       .from("products")
-      .select("id,title,price,currency,status,district,created_at,featured,category_id,product_images(image_url,is_featured,sort_order)")
+      .select("id,title,price,currency,status,quantity,district,created_at,featured,category_id,product_images(image_url,is_featured,sort_order)")
       .neq("status", "pending");
 
     if (data.category_id) q = q.eq("category_id", data.category_id);
@@ -41,6 +41,7 @@ export const listProducts = createServerFn({ method: "POST" })
         price: Number(r.price),
         currency: r.currency as string,
         status: r.status as "available" | "sold" | "pending" | "reserved",
+        quantity: (r.quantity as number | null) ?? null,
         district: (r.district as string | null) ?? null,
         featured_image: featured?.image_url ?? null,
         created_at: r.created_at as string,
