@@ -5,6 +5,7 @@ import { getProduct } from "@/lib/products.functions";
 import { cldOptimize } from "@/lib/cloudinary";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { BuyViaWhatsApp } from "@/components/BuyViaWhatsApp";
+import { AvailabilityBadge } from "@/components/AvailabilityBadge";
 import { useI18n } from "@/lib/i18n";
 import { useState } from "react";
 import { Heart, MapPin } from "lucide-react";
@@ -72,6 +73,9 @@ function ProductDetail() {
         <div>
           {p.categories && <div className="text-xs tracking-widest text-[var(--gold)] mb-2">{p.categories.name?.toUpperCase()}</div>}
           <h1 className="text-3xl md:text-4xl font-display mb-3">{p.title}</h1>
+          <div className="mb-4">
+            <AvailabilityBadge status={p.status} quantity={p.quantity} />
+          </div>
           <div className="text-3xl font-display gold-text mb-6">{p.currency} {formatted}</div>
 
           <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-6">
