@@ -20,7 +20,7 @@ export function ProductCard({ p }: { p: ProductCardData }) {
 
   return (
     <Link to="/products/$id" params={{ id: p.id }} className="block group">
-      <div className="luxury-card rounded-xl overflow-hidden h-full flex flex-col">
+      <div className="luxury-card rounded-xl overflow-hidden h-full flex flex-col transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-2xl hover:shadow-[var(--gold)]/20 active:scale-[0.97] cursor-pointer animate-fade-in">
         <div className="relative aspect-[4/3] overflow-hidden bg-[var(--surface-elevated)]">
           {p.featured_image ? (
             <img
